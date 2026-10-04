@@ -18,6 +18,8 @@ dependencies {
 
     implementation 'com.pedropathing:revhub:3.0.1'
     implementation 'com.pedropathing:tuning:1.0.1'
+    implementation 'com.pedropathing.ivy:pedro:1.1.1'
+
 
     implementation 'dev.nextftc.v2:control:0.3.0-SNAPSHOT'
     implementation 'dev.nextftc.v2:hardware:0.3.0-SNAPSHOT'

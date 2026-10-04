@@ -13,14 +13,15 @@ import dev.nextftc.units.radians
 
 class Drivetrain : Mechanism {
     // TODO: Change ports to the correct ones
-    val frontLeft = NextMotor(RobotController.controlHub, 3)
-    val frontRight = NextMotor(RobotController.controlHub, 2)
-    val backLeft = NextMotor(RobotController.controlHub, 1)
-    val backRight = NextMotor(RobotController.controlHub, 0)
+    val frontLeft = NextMotor("FL")
+    val frontRight = NextMotor("FR")
+    val backLeft = NextMotor("RL")
+    val backRight = NextMotor("RR")
     val imu = NextIMU()
 
     fun initalizeIMU() {
         imu.initialize(IMU.Parameters(RevHubOrientationOnRobot(RevHubOrientationOnRobot.LogoFacingDirection.UP, RevHubOrientationOnRobot.UsbFacingDirection.BACKWARD)))
+        imu.resetYaw()
     }
 
     fun startDrive(gamepad: Gamepad) {
