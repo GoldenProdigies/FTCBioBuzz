@@ -12,12 +12,18 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 public class fieldTeleop extends LinearOpMode {
     @Override
     public void runOpMode() throws InterruptedException {
+        boolean shootIsOn = false;
+        boolean intakeIsOn = false;
+
         // Declare our motors
         // Make sure your ID's match your configuration
         DcMotor frontLeftMotor = hardwareMap.dcMotor.get("FL");
         DcMotor backLeftMotor = hardwareMap.dcMotor.get("RL");
         DcMotor frontRightMotor = hardwareMap.dcMotor.get("FR");
         DcMotor backRightMotor = hardwareMap.dcMotor.get("RR");
+        DcMotor frontIntakeMotor = hardwareMap.dcMotor.get("FIM");
+        DcMotor backIntakeMotor = hardwareMap.dcMotor.get("RIM");
+        DcMotor shootMotor = hardwareMap.dcMotor.get("SM");
 
         // Reverse the right side motors. This may be wrong for your setup.
         // If your robot moves backwards when commanded to go forwards,
@@ -74,6 +80,28 @@ public class fieldTeleop extends LinearOpMode {
             backLeftMotor.setPower(backLeftPower);
             frontRightMotor.setPower(frontRightPower);
             backRightMotor.setPower(backRightPower);
+
+            if (gamepad1.left_bumper) {
+                intakeIsOn = !intakeIsOn;
+            }
+
+            if (gamepad1.right_bumper) {
+                shootIsOn = !shootIsOn;
+            }
+
+            if(shootIsOn) {
+                shootMotor.setPower(1);
+            } else {
+                shootMotor.setPower(0);
+            }
+
+            if(intakeIsOn) {
+                frontIntakeMotor.setPower(1);
+                backIntakeMotor.setPower(1);
+            } else {
+                frontIntakeMotor.setPower(0);
+                backIntakeMotor.setPower(0);
+            }
         }
     }
 }
