@@ -2,6 +2,9 @@
 
 This repository contains the public FTC SDK for the BIOBUZZ (2026-2027) competition season.
 
+## NOTICE FOR GOLDEN PRODIGIES
+Please re-add the Gradle tasks for Sloth following this link: https://github.com/Dairy-Foundation/Sloth#gradle-tasks
+
 ## Welcome!
 This GitHub repository contains the source code that is used to build an Android app to control a *FIRST* Tech Challenge competition robot.  To use this SDK, download/clone the entire project to your local computer.
 
