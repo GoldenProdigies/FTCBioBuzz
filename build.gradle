@@ -1,0 +1,37 @@
+/**
+ * Top-level build file for ftc_app project.
+ *
+ * It is extraordinarily rare that you will ever need to edit this file.
+ */
+
+buildscript {
+    ext {
+        kotlin_version = '2.4.20'
+    }
+    repositories {
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    // Note for FTC Teams: Do not modify this yourself.
+    id 'com.android.application' version '8.13.2' apply false
+    id 'com.android.library' version '8.13.2' apply false
+}
+
+// This is now required because aapt2 has to be downloaded from the
+// google() repository beginning with version 3.2 of the Android Gradle Plugin
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
